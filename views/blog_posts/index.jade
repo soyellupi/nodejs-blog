@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+ h1= title
+ #new-blog-post
+  a(href="/blog_posts/new") New Post
+ #blog-posts
+    - each blog_post in blog_posts
+      ul.blog_post
+        li.created_at= blog_post.created_at
+        li.title 
+            a(href="/blog_posts/"+blog_post._id.toHexString())!= blog_post.title
+        li.delete-comment

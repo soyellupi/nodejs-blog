@@ -1,0 +1,9 @@
+#blog-posts ul{
+  list-style-type: none;
+}
+
+.created_at{
+  font-size: 80%;
+}
+
+    

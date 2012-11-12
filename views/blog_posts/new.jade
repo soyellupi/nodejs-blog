@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+
+  h1= title
+  form( method="post", action="/blog_posts")
+    div
+        div
+            span Title :
+            input(type="text", name="title", id="blog-post-title")
+        div
+            span Body :
+            textarea( name="body", rows=20, id="blog-post-body)
+        div#blog-post-submit
+            input(type="submit", value="Send")
+
+  a(href="/") Back

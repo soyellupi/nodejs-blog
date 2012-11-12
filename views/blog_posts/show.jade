@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+
+  h1= title
+  div.article
+    div.created_at= blog_post.created_at
+    div.body= blog_post.body
+
+    h3 Comments  
+
+    - each comment in blog_post.comments
+      div.comment
+        div.comment= comment.comment
+    div.new-comment
+      h4 New Comment
+      form( method="post", action="/blog_posts/"+blog_post._id.toHexString()+"/comments")
+        div
+          textarea( name="comment", rows=5, id="addCommentComment")
+        div#blog-post-comment-submit
+          input(type="submit", value="Send")
+
+  a(href="/") Back          
